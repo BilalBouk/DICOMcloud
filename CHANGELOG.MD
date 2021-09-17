@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Next Version
+
+### Added
+- Add support for "Deploy to Azure" Button from GitHub. Issue #80
+
+### Fixed
+- Fix: Improve storage performance by disabling pre-generated J2K DICOM files and JPG images by default. Issue #98
+- Fix: Server fails to store when a DICOM file is invalid (valu doesn't confirm to VR) Issue #99
+- Fix: maximum request size exceeded for STOWRS (Increase max request size to 100MB). Issue #95
+- Fix: Storing a DICOM instance fails if a cached version (XML, JSON, other transfer syntax) fails to be stored. Issue #86
+- Fix: Problem when handling dicomdata with non english characters. Issue #84 Thanks @nutzlastfan
+- Fix: Problem with decimal conversion on non different culture settings (german) Issue #81 Thanks @nutzlastfan
+- Fix: The "api" route for the Store service (STOW-RS) doesn't work without a Study Instance UID. Issue #79
+
 ## v0.7.1-beta
 
 ### Added
@@ -24,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix QIDO: UID list parsing is not according to standard. Issue #41
 - Fix Wado-RS GetStudies not always working. Issue #55
 - Fix WADO-RS retrieve frame is not working. Issue #48
+- Fix Wildcard Matching not working. Issue #101
 
 ## v0.7.0-beta
 

@@ -16,15 +16,15 @@ namespace DICOMcloud
         {
             if (ds.InternalTransferSyntax.IsEncapsulated)
             {
-                Dataset = ds.Clone(DicomTransferSyntax.ImplicitVRLittleEndian);
+                Dataset = ds.Clone(DicomTransferSyntax.ImplicitVRLittleEndian).NotValidated();
             }
             else
             {
                 // pull uncompressed frame from source pixel data
                 Dataset = ds ;
             }
-            
-            PixelData = DicomPixelData.Create (Dataset) ;
+
+            PixelData = DicomPixelData.Create(Dataset);
         }
 
         public fo.DicomDataset Dataset { get; private set; }
